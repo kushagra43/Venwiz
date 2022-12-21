@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link href="favicon.png" rel="icon">
+  
+    <title>Venwiz</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="https://www.venwiz.com/">
+        <img
+          src="Ven-Logo-Dark-Colour 1.svg"
+          alt="Ven-Logo-Dark-Colour"
+        />
+      </a>
+      </nav>
+
+      <div class="flexrow">
+        <div class="flexrow header-content-container space-between">
+          <div class="header-content">
+            <h1 class="heading1-white">
+              The Go-To Platform For Industrial Services Procurement.
+            </h1>
+            <p class="white-parah marginbottom20">
+              A single source of truth for discovery, procurement and execution
+              of
+              <span class="bold">CapEx</span> &
+              <span class="bold">MRO</span> projects.
+            </p>
+            <ul>
+              <li class="white-parah list">
+                <span class="bold">80%</span>
+                reduction in time and effort for the discovery and evaluation of
+                vendors.
+              </li>
+              <li class="white-parah list">
+                <span class="bold">15%</span>
+                cost reduction due to efficient price discovery.
+              </li>
+            </ul>
+          </div>
+          <div class="form-container">
+            <div class="form-back"></div>
+            <form class="form" id="hsform" action="https://forms.hubspot.com/uploads/form/v2/23529970/d4c57db6-b880-48e1-9974-f44791531218" method="post">
+              <div class="inputcont">
+                <input type="text" name="first_name" class="input" placeholder="First Name" />
+                <input type="text" name="last_name" class="input" placeholder="Last Name" />
+                <input type="email" name="email" class="input" placeholder="Work Email" />
+                <input type="text" name="company" class="input" placeholder="Company Name" />
+                <input type="tel" name="mobilephone" class="input" placeholder="Mobile No." />
+              </div>
+              <div class="flexrowend">
+                <input type="submit" class="button" value="Submit"/>
+              </div>
+            </form>
+            <script>
+              $("#hsform").submit(function(e) {
+                  e.preventDefault(); // avoid to execute the actual submit of the form.
+                  var form = $(this);
+                  var url = form.attr('action');
+                  $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: form.serialize(), // serializes the form's elements.
+                        success: function(data)
+                        {
+                            window.location.href = "https://www.venwiz.com/vendor-list/?subcategory=Listing&q=cable%20laying";
+                        },
+                        error: function (data) {
+                      alert("Something went wrong, Please try again later.");
+
+                    }
+                      }); 
+                  });
+            </script>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="Brands-container">
+      <h1 class="heading-blue">Brands That Trust Venwiz</h1>
+      <div class="grid5 brand-container">
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="Ven-Logo-Dark-Colour 1.svg"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="Ven-Logo-Dark-Colour 1.svg"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="Ven-Logo-Dark-Colour 1.svg"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="Ven-Logo-Dark-Colour 1.svg"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+        <div class="brand">
+          <img
+            class="brand-img"
+            src="Ven-Logo-Dark-Colour 1.svg"
+            alt="Ven-Logo-Dark-Colour"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-div">
+      <div class="flexrow header-content-container space-between">
+        <div class="carousel-container">
+          <div id="carousel">
+            <div class="slide">
+              <!-- <img src="" alt="" /> -->
+              <div class="testimonial-image"></div>
+              <h1 class="testimonail-heading">Slide 1</h1>
+              <p class="testimonial-parah">
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem
+                Ipsum Lorem Ipsum Lorem Ipsum
+              </p>
+            </div>
+            <div class="slide">
+              <!-- <img src="" alt="" /> -->
+              <div class="testimonial-image"></div>
+              <h1 class="testimonail-heading">Slide 2</h1>
+              <p class="testimonial-parah">
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem
+                Ipsum Lorem Ipsum Lorem Ipsum
+              </p>
+            </div>
+            <div class="slide">
+              <!-- <img src="" alt="" /> -->
+              <div class="testimonial-image"></div>
+              <h1 class="testimonail-heading">Slide 3</h1>
+              <p class="testimonial-parah">
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                Lorem Ipsum Lorem Ipsum Lorem Ipsums
+              </p>
+            </div>
+          </div>
+
+          <!-- Prev/Next buttons -->
+          <div class="nav-button-container">
+            <button id="prev-button" class="nav-button"><</button>
+            <button id="next-button" class="nav-button">></button>
+          </div>
+        </div>
+        <div class="header-content">
+          <h1 class="heading1-white carousel-div-heading">
+            Instantly Discover 10,000+ Verified Vendors Across 40+ Categories!
+          </h1>
+        <button onclick=" window.open('https://venwiz.com#contact','_blank')" class="button carousel-div-button">Contact Us</button>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
+
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins;
+}
+
+.header {
+    background-image: url('Header-Background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+.navbar {
+    max-width: 1320px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.header-content-container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.header-content {
+    max-width: 523px;
+    overflow: hidden;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.list {
+    margin-left: 20px;
+}
+
+.form-container {
+    max-width: 440px;
+    min-width: 340px;
+    overflow: hidden;
+    margin-left: 40px;
+    margin-bottom: -370px;
+    padding-top: 20px;
+}
+
+
+.form-back {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(231, 227, 248, 0.1);
+    backdrop-filter: blur(150px);
+    border-radius: 9px;
+    height: 420px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-left: 20px;
+}
+
+.form {
+    position: relative;
+    margin-right: 10px;
+    top: -440px;
+    padding: 50px 30px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 3px solid rgba(231, 227, 248, 0.25);
+    backdrop-filter: blur(150px);
+    border-radius: 9px;
+    max-width: 423px;
+    z-index: 1;
+}
+
+.inputcont {
+    padding-right: 20px;
+}
+
+.input {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+    padding: 20px 0 20px 20px;
+    border-radius: 9px;
+    margin-bottom: 11px;
+    color: white;
+}
+
+.input::placeholder {
+    color: white;
+}
+
+.button {
+    display: block;
+    background: #17B45A;
+    border: none;
+    padding: 14px 28px;
+    color: white;
+    border-radius: 11px;
+}
+
+.heading1-white {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 121%;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.white-parah {
+    font-weight: 400;
+    font-size: 19.6552px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+.Brands-container {
+    margin: 60px auto;
+    padding: 0 40px;
+    max-width: 1100px;
+}
+
+.grid5 {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.heading-blue {
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    color: #012970;
+    margin-bottom: 20px;
+}
+
+.brand {
+    width: 100%;
+    height: 72px;
+    background: #EFEFEF;
+    border-radius: 8.41654px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-img {
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.slide {
+    background-color: #DEDEDE;
+    height: 100%;
+    width: 100%;
+}
+
+
+.carousel-div {
+    background-image: url('Header-Background.png');    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+
+}
+
+.carousel-container {
+    margin-right: 40px;
+    height: 400px;
+    overflow: hidden;
+}
+
+#carousel {
+    display: flex;
+}
+
+.slide {
+    display: none;
+    background: #EFEFEF;
+    border-radius: 38.9041px;
+    padding: 60px 20px;
+    width: 100%;
+    min-height: 200px;
+    width: 100%;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: darkslategrey;
+    margin-bottom: 20px;
+}
+
+
+.testimonial-heading {
+    margin-bottom: 50px;
+}
+
+.testimonial-parah {}
+
+.nav-button {
+    margin: 0 20px;
+    border-radius: 100%;
+    padding: 10px 12px;
+    border: none;
+    font-weight: 600;
+}
+
+.nav-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/* normal styles */
+.flexrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marginbottom20 {
+    margin-bottom: 20px;
+}
+
+.flexrowend {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+
+/* media queries */
+
+@media only screen and (max-width: 991px) {
+    .heading1-white {
+        font-size: 40px;
+    }
+
+    .white-parah {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .header-content {
+        margin-right: 20px;
+    }
+
+    .form-container {
+        margin-left: 20px;
+    }
+
+    .header {
+        padding: 60px 20px;
+
+    }
+
+    .grid5 {
+        column-gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header-content {
+        margin-right: 0px;
+        margin-bottom: 60px;
+    }
+
+    .form-container {
+        max-width: 523px;
+    }
+
+    .header-content-container {
+        flex-direction: column;
+    }
+
+
+    .carousel-div-heading {
+        text-align: center;
+    }
+
+    .carousel-div-button {
+        margin: 0 auto;
+    }
+
+    .grid5 {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+    }
+
+    .carousel-container {
+        margin-right: 0px;
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .heading1-white {
+        font-size: 34px;
+    }
+
+    .white-parah {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+}
+
+
+</style>
+
+
+<script>
+const carousel = document.getElementById("carousel");
+
+// Get the slides
+const slides = carousel.children;
+
+// Set the current slide
+let currentSlide = 0;
+
+// Show the first slide
+slides[currentSlide].classList.add("active");
+
+// Next button event listener
+document.getElementById("next-button").addEventListener("click", () => {
+  // Remove the active class from the current slide
+  slides[currentSlide].classList.remove("active");
+
+  // Increment the current slide
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  // Add the active class to the new current slide
+  slides[currentSlide].classList.add("active");
+});
+
+// Prev button event listener
+document.getElementById("prev-button").addEventListener("click", () => {
+  // Remove the active class from the current slide
+  slides[currentSlide].classList.remove("active");
+
+  // Decrement the current slide
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+
+  // Add the active class to the new current slide
+  slides[currentSlide].classList.add("active");
+});
+
+
+</script>
