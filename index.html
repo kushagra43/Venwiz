@@ -106,25 +106,49 @@
                 <input type="submit" class="button" value="Submit" />
               </div>
             </form>
-            <script>
-              $("#hsform").submit(function (e) {
-                e.preventDefault(); // avoid to execute the actual submit of the form.
-                var form = $(this);
-                var url = form.attr("action");
-                $.ajax({
-                  type: "POST",
-                  url: url,
-                  data: form.serialize(), // serializes the form's elements.
-                  success: function (data) {
-                    window.location.href =
-                      "https://www.venwiz.com/vendor-list/?category=MRO%20Services&subcategory=Electrical%20Equipment&subcategoryId=62820ab9ea7c19cb54d1b79b";
-                  },
-                  error: function (data) {
-                    alert("Something went wrong, Please try again later.");
-                  },
+
+                        <script>
+                $("#hsform").submit(function (e) {
+                  e.preventDefault(); // avoid to execute the actual submit of the form.
+                  var form = $(this);
+                  var url = form.attr("action");
+                                    
+                  $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function (data) {
+                    },
+                    error: function (data) {
+                      alert("Something went wrong, Please try again later.");
+                    },
+                  });
+            
+
+                  var sreq = [{"Attribute": "FirstName","Value": (form[0][0]).value},{"Attribute": "LastName","Value": (form[0][1]).value},{"Attribute": "EmailAddress","Value": (form[0][2]).value},{"Attribute": "Company","Value": (form[0][3]).value},{"Attribute": "Mobile","Value": (form[0][4]).value}];
+                  
+                  $.ajax({
+                    type: "POST",
+                    url: "https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?accessKey=u$r3f5d21473715fc4abecd3670788dd939&secretKey=2ef68dbb1321b69b464699fb4ed01137c6a6ae40",
+                    data: form.serialize(), // serializes the form's elements.
+
+                    data: JSON.stringify(sreq),
+                    contentType: "application/json; charset=utf-8",
+
+                    success: function (data) {
+                      window.location.href =
+                        "https://www.venwiz.com/vendor-list/?category=MRO%20Services&subcategory=Electrical%20Equipment&subcategoryId=62820ab9ea7c19cb54d1b79b";
+                    },
+                    error: function (data) {
+                      alert("Something went wrong, Please try again later.");
+                    },
+                  });
                 });
-              });
-            </script>
+              </script>
+
+            
+            
+            
           </div>
         </div>
       </div>
